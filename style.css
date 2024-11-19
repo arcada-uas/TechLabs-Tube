@@ -1,0 +1,135 @@
+body {
+    background-color:#3D3D3D;
+    color: #FFF;
+}
+span {
+    cursor: pointer;
+    color: #b7b7ff;
+    display: table;
+}
+
+span:hover {
+    text-decoration: underline;
+}
+
+.lecture {
+    display: none;
+}
+
+.lecture[data-lecture="1"] {
+    display: block;
+}
+
+.lectureSelector {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1697px;
+    margin-bottom: 6px;
+}
+
+small {
+    font-size: larger;
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+small:hover {
+    background-color: #555;
+}
+
+small.current {
+    background-color: green;
+}
+
+video {
+    max-width: 1280px;
+    vertical-align: top;
+    border: 2px solid black;
+}
+
+.timecodes {
+    width: 400px;
+    height: 720px;
+    display: inline-block;
+    padding-left: 5px;
+    border: 2px solid black;
+}
+
+/* Button styling */
+.toggler {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.toggler:hover {
+    background-color: #555;
+}
+.toggler:not(#lightModeToggler) {
+    display: block;
+}
+
+#lightModeToggler {
+    margin-left: auto;
+}
+
+/* boxes that hold the subs */
+.transcript {
+    display: none;
+    height: 200px;
+    overflow-y: scroll;
+    border: 2px black solid;
+    max-width: 1693px;
+}
+
+/* Sub FHD Screens */
+@media (max-width:1800px) {
+    video {
+        width: 100%;
+    }
+
+    .transcript {
+        width: 49%;
+        height: 500px;
+    }
+
+    .timecodes {
+        width: 49%;
+        height: 500px;
+        overflow-y: scroll;
+    }
+
+    .toggler:not(#lightModeToggler) {
+        float: right;
+    }
+
+    body {
+        max-width: 1280px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width:1000px) {
+    video {
+        width: 100%;
+    }
+
+    .transcript,
+    .toggler:not(#lightModeToggler)  {
+        display: none !important;
+    }
+
+    .timecodes {
+        width: 100%;
+        height: 300px;
+        overflow-y: scroll;
+    }
+}
